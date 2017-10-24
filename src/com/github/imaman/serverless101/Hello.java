@@ -6,8 +6,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-public class Hello {
+public class Hello implements RequestHandler<Map<String, Object>, Map<String, Object>> {
   public Map<String, Object> handleRequest(Map<String, Object> map, Context context) {
     Map<String, Object> ret = new HashMap<>();
 
@@ -15,7 +16,7 @@ public class Hello {
 
     String input = map.entrySet().stream().map(x -> x.toString())
         .collect(Collectors.joining("<br>\n"));
-    String body = "<html><body><h1>AWS Lambda 101, we are at $DATE$ (Map generated!)</h1>\n<h2>$IN$</h2>\n</body></html>\n";
+    String body = "<html><body><h1>AWS Lambda 101 is a go, we are at $DATE$ (Map generated!)</h1>\n<h2>$IN$</h2>\n</body></html>\n";
     body = body.replace("$DATE$", new Date().toString()).replace("$IN$", input);
     ret.put("body", body);
 
