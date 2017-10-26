@@ -1,9 +1,7 @@
-package com.github.imaman.serverless101;
+package com.github.imaman.lambda101;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
@@ -13,11 +11,9 @@ public class Hello implements RequestHandler<Map<String, Object>, Map<String, Ob
     Map<String, Object> ret = new HashMap<>();
 
     ret.put("statusCode", "200");
-
-    String input = map.entrySet().stream().map(x -> x.toString())
-        .collect(Collectors.joining("<br>\n"));
-    String body = "<html><body><h1>AWS Lambda 101 is a _GO_, we are at $DATE$ (Map generated!)</h1>\n<h2>$IN$</h2>\n</body></html>\n";
-    body = body.replace("$DATE$", new Date().toString()).replace("$IN$", input);
+    String body = String.format(
+        "<html><body><h1>AWS Lambda is up and running</h1><h2>#inputs=%s</h2></body></html>\n",
+        map.size());
     ret.put("body", body);
 
     Map<String, Object> headers = new HashMap<>();
