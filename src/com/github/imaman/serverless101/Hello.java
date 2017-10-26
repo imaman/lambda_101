@@ -16,7 +16,7 @@ public class Hello implements RequestHandler<Map<String, Object>, Map<String, Ob
 
     String input = map.entrySet().stream().map(x -> x.toString())
         .collect(Collectors.joining("<br>\n"));
-    String body = "<html><body><h1>AWS Lambda 101 is a go, we are at $DATE$ (Map generated!)</h1>\n<h2>$IN$</h2>\n</body></html>\n";
+    String body = "<html><body><h1>AWS Lambda 101 is a _GO_, we are at $DATE$ (Map generated!)</h1>\n<h2>$IN$</h2>\n</body></html>\n";
     body = body.replace("$DATE$", new Date().toString()).replace("$IN$", input);
     ret.put("body", body);
 
