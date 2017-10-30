@@ -1,9 +1,0 @@
-{
-  "name": "L101",
-  "sourcepath": "src",
-  "main_class": "com.github.imaman.serverless101.Hello",
-  "cutoff": "ed00d11c9a6af3e861fc0b586dbbd2119971eef5",
-  "account_id": "196625562809",
-  "region": "us_east_1"
-}
-
