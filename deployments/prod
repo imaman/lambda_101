@@ -1,7 +1,7 @@
 name: "L101"
 sourcepath: "src"
-main_class: "com.github.imaman.serverless101.Hello"
-cutoff: "ed00d11c9a6af3e861fc0b586dbbd2119971eef5"
+main_class: "com.github.imaman.lambda101.LambdaMain"
+cutoff: "26fd4203841a31d190dd8a7c5613e45c8a4d1bc3"
 account_id: "196625562809"
 region: US_EAST_1
 
