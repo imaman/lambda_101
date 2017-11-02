@@ -1,7 +1,7 @@
 name: "L101"
 sourcepath: "src"
 main_class: "com.github.imaman.lambda101.LambdaMain"
-cutoff: "26fd4203841a31d190dd8a7c5613e45c8a4d1bc3"
+cutoff: "cadaef1eb003ab166854d592d23f2019b5a1661d"
 account_id: "196625562809"
 region: US_EAST_1
 
