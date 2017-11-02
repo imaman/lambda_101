@@ -21,11 +21,10 @@ public class LambdaMain implements RequestHandler<Map<String, Object>, Map<Strin
         .sorted(Comparator.comparing(e -> e.getKey()))
         .map(Object::toString)
         .collect(Collectors.joining("  \n")));
-
+    
     Map<String, Object> headers = new HashMap<>();
     headers.put("Content-Type", "text/html");
     ret.put("headers", headers);
-
     return ret;
   }
 }
